@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using static DevStore.WebAPI.Core.DatabaseFlavor.ProviderConfiguration;
 
 namespace DevStore.WebAPI.Core.DatabaseFlavor
@@ -36,6 +36,6 @@ namespace DevStore.WebAPI.Core.DatabaseFlavor
                 _ => throw new ArgumentOutOfRangeException(nameof(database), database, null)
             };
         }
-        
+
     }
 }

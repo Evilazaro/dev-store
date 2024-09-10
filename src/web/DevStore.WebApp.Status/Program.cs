@@ -1,6 +1,6 @@
 using DevStore.WebAPI.Core.DatabaseFlavor;
-using Serilog;
 using DevStore.WebAPI.Core.Extensions;
+using Serilog;
 using static DevStore.WebAPI.Core.DatabaseFlavor.ProviderConfiguration;
 
 var builder = WebApplication.CreateBuilder(args);

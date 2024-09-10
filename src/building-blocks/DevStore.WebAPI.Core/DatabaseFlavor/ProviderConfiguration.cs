@@ -1,8 +1,7 @@
-﻿using System;
-using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using MySqlConnector;
+using System;
+using System.Reflection;
 
 namespace DevStore.WebAPI.Core.DatabaseFlavor;
 

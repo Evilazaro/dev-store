@@ -14,7 +14,13 @@ public static class EasyNetQRabbitHealthCheck
         var easyNetQConnstringParser = new ConnectionStringParser();
         var connectionConfiguration = easyNetQConnstringParser.Parse(connectionString);
         var connRabbit = CreateConnectionFactory(connectionConfiguration);
-        var rabbitHealthCheck = new RabbitMQHealthCheck(connRabbit);
+        var rabbitMQHealthCheckOptions = new RabbitMQHealthCheckOptions();
+
+        rabbitMQHealthCheckOptions.ConnectionFactory = connRabbit;
+        rabbitMQHealthCheckOptions.ConnectionUri = connRabbit.Uri;
+
+        var rabbitHealthCheck = new RabbitMQHealthCheck(rabbitMQHealthCheckOptions);
+
         healthChecksBuilder.Services.AddSingleton(sp => rabbitHealthCheck);
 
         return healthChecksBuilder.Add(new HealthCheckRegistration(
